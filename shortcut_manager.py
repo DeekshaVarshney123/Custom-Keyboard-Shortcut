@@ -5,7 +5,8 @@ class ShortcutManager:
     """Manages all shortcut data, including file I/O and validation."""
     
     def __init__(self, filename="shortcuts.json"):
-        self.filename = filename
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.filename = os.path.join(script_dir, filename)
         self.shortcuts = {}
         self.load_shortcuts()
 
